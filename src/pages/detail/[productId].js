@@ -28,10 +28,9 @@ export async function getStaticPaths() {
   return { paths, fallback: false };
 }
 
-export const getStaticProps = async (context) => {
-  const { params } = context;
+export const getStaticProps = async ({ params }) => {
   const res = await fetch(
-    `https://pc-bd.vercel.app/api/v1/product/${params.pronactId}`
+    `https://pc-bd.vercel.app/api/v1/product/${params.productId}`
   );
   const data = await res.json();
   return { props: { product: data } };

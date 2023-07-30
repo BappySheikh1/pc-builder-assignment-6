@@ -57,7 +57,10 @@ const LoginPage = () => {
               <button className="btn btn-primary">Login</button>
             </div>
             <div className="flex justify-evenly">
-              <button onClick={handelGoogleLogin} className="text-3xl mt-3 text-blue-700">
+              <button
+                onClick={handelGoogleLogin}
+                className="text-3xl mt-3 text-blue-700"
+              >
                 <FaGoogle />
               </button>
               <button onClick={handelGithubLogin} className="text-3xl mt-3">
