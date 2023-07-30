@@ -33,12 +33,13 @@ const Navbar = () => {
               <li>
                 <a>Categories</a>
                 <ul className="p-2">
-                  <li><Link href='/prodact/CPU'>CPU / Processor</Link></li>
-                  <li><Link href='/prodact/Motherboard'>Motherboard</Link></li>
-                  <li><Link href='/prodact/RAM'>RAM</Link></li>
-                  <li><Link href='/prodact/PowerSupplyUnit'>Power Supply Unit</Link></li>
-                  <li><Link href='/prodact/StorageDevice'>Storage Device</Link></li>
-                  <li><Link href='/prodact/Monitor'>Monitor</Link></li>
+                  <li><Link href='/product/CPU'>CPU / Processor</Link></li>
+                  <li><Link href='/product/Motherboard'>Motherboard</Link></li>
+                  <li><Link href='/product/RAM'>RAM</Link></li>
+                  <li><Link href='/product/PowerSupplyUnit'>Power Supply Unit</Link></li>
+                  <li><Link href='/product/StorageDevice'>Storage Device</Link></li>
+                  <li><Link href='/product/Monitor'>Monitor</Link></li>
+                  <li><Link href='/product/Other'>Other</Link></li>
                 </ul>
               </li>
             </ul>
@@ -51,17 +52,18 @@ const Navbar = () => {
             Categories
           </label>
           <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 font-semibold shadow bg-base-100 rounded-box w-52">
-            <li><Link href='/prodact/CPU'>CPU Processor</Link></li>
-            <li><Link href='/prodact/Motherboard'>Motherboard</Link></li>
-            <li><Link href='/prodact/RAM'>RAM</Link></li>
-            <li><Link href='/prodact/PowerSupplyUnit'>Power Supply Unit</Link></li>
-            <li><Link href='/prodact/StorageDevice'>Storage Device</Link></li>
-            <li><Link href='/prodact/Monitor'>Monitor</Link></li>
+            <li><Link href='/product/CPU'>CPU Processor</Link></li>
+            <li><Link href='/product/Motherboard'>Motherboard</Link></li>
+            <li><Link href='/product/RAM'>RAM</Link></li>
+            <li><Link href='/product/PowerSupplyUnit'>Power Supply Unit</Link></li>
+            <li><Link href='/product/StorageDevice'>Storage Device</Link></li>
+            <li><Link href='/product/Monitor'>Monitor</Link></li>
+            <li><Link href='/product/Other'>Other</Link></li>
           </ul>
         </ul>
 
         <div className="navbar-end">
-          <Link href='/pc-build' className="btn btn-secondary mx-2">PC Build</Link>
+          <Link href='/pc-build' className="btn  mx-2">PC Build</Link>
           <ul className="">
             {user?.email ? <li><p className="btn btn-warning" onClick={handelLogOut}>Log Out</p></li> :
               <li><Link className="btn btn-accent" href='/login'>Login</Link></li>}
