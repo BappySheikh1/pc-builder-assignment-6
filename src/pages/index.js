@@ -1,4 +1,5 @@
 import ProductsCard from "@/component/Card";
+import HeroSectionHome from "@/component/HomePage/HeroSection";
 import ProductCategoryHomePage from "@/component/HomePage/ProductCategory";
 import { getProductsCatagoriSuccess } from "@/redux/features/productCategory/productCategorySlice";
 import { useAppDispatch } from "@/redux/hook";
@@ -20,9 +21,9 @@ const HomePage = ({ products }) => {
 
   return (
     <>
+      <HeroSectionHome />
+      <ProductCategoryHomePage />
 
-    <ProductCategoryHomePage />
-    
       <div className="container mx-auto my-14">
         <div className="text-center">
           <h1 className="text-4xl my-3">Featured Products</h1>
