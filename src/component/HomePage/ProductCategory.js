@@ -10,16 +10,17 @@ const ProductCategoryHomePage = () => {
         "PowerSupplyUnit",
         "StorageDevice",
         "Monitor",
+        "Other"
    ];
 
     return (
-        <div className="container mx-auto min-h-[50vh] p-2">
+        <div className="container mx-auto p-2">
         <div className="text-center">
-             <h1 className="text-2xl my-4">Featured Category</h1>
-             <p className="mb-4">Get Your Desired Product from Featured Category!</p>
+             <h1 className="text-2xl my-4 font-bold">Featured Category</h1>
+             <p className="mb-4 font-semibold">Get Your Desired Product from Featured Category!</p>
         </div>
         <div className="">
-             <div className="grid grid-cols-2 md:grid-cols-6 gap-2">
+             <div className="grid grid-cols-2 md:grid-cols-7 gap-0">
                   {computerComponents.map((category, i) => (
                        <ProductCardCategoryPage category={category} key={i} />
                   ))}

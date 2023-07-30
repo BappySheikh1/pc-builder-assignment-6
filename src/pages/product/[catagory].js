@@ -4,13 +4,21 @@ import { useAppSelector } from "@/redux/hook";
 import { useRouter } from "next/router";
 
 const ProductCategory = () => {
-  const { products } = useAppSelector((state) => state);
-  console.log(products);
+  // Dummy array of products for testing
+  const dummyProducts = [
+    { _id: 1, category: "Category1", productName: "Product1" },
+    { _id: 2, category: "Category2", productName: "Product2" },
+    { _id: 3, category: "Category1", productName: "Product3" },
+    // Add more dummy products as needed
+  ];
+
+  const { products } = useAppSelector((state) => state.productsCategory);
+  console.log("category Products", products);
   const router = useRouter();
 
-  const filteredProducts = products.filter(
-    (product) => product.category === `${router.query.category}`
-  );
+  const filteredProducts = products.length > 0
+  ? products.filter((product) => product.category === router.query.category)
+  : dummyProducts.filter((product) => product.category === router.query.category);
 
   return (
     <div className="container mx-auto my-14">
@@ -18,7 +26,7 @@ const ProductCategory = () => {
         <h1 className="text-4xl my-3">Featured Products</h1>
         <p>Check & Get Your Desired Product!</p>
       </div>
-      <div className="grid  grid-cols-1 md:grid-cols-5 gap-4 justify-items-center my-10">
+      <div className="grid  grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 justify-items-center my-10">
         {filteredProducts.map((product) => (
           <ProductsCard product={product} key={product._id} />
         ))}

@@ -26,11 +26,11 @@ const HomePage = ({ products }) => {
 
       <div className="container mx-auto my-14">
         <div className="text-center">
-          <h1 className="text-4xl my-3">Featured Products</h1>
-          <p>Check & Get Your Desired Product!</p>
+          <h1 className="text-4xl my-3 font-bold">Featured Products</h1>
+          {/* <p>Check & Get Your Desired Product!</p> */}
         </div>
 
-        <div className="grid  grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5  justify-items-center my-10">
+        <div className="grid  grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2">
           {randomSixProducts.map((product) => (
             <ProductsCard product={product} key={product._id} />
           ))}
