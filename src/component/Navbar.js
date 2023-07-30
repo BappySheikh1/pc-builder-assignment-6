@@ -21,7 +21,7 @@ const Navbar = () => {
 
   return (
     <>
-     <div className="bg-gray-500">
+     <div className="bg-[#212529] text-white">
       <div className="navbar container mx-auto">
         <div className="navbar-start">
           <div className="dropdown">
@@ -31,8 +31,8 @@ const Navbar = () => {
             <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
 
               <li>
-                <a>Categories</a>
-                <ul className="p-2">
+                <a className="">Categories</a>
+                <ul className="p-2 text-black">
                   <li><Link href='/product/CPU'>CPU / Processor</Link></li>
                   <li><Link href='/product/Motherboard'>Motherboard</Link></li>
                   <li><Link href='/product/RAM'>RAM</Link></li>
@@ -51,7 +51,7 @@ const Navbar = () => {
           <label className="cursor-pointer font-semibold" tabIndex={0} >
             Categories
           </label>
-          <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 font-semibold shadow bg-base-100 rounded-box w-52">
+          <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 font-semibold shadow bg-gray-500 rounded-box w-52">
             <li><Link href='/product/CPU'>CPU Processor</Link></li>
             <li><Link href='/product/Motherboard'>Motherboard</Link></li>
             <li><Link href='/product/RAM'>RAM</Link></li>

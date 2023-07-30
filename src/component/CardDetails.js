@@ -1,5 +1,5 @@
 
-const CardDtal = ({ productDetails }) => {
+const CardDetails = ({ productDetails }) => {
 
      return (
           <div className="container mx-auto p-5">
@@ -52,4 +52,4 @@ const CardDtal = ({ productDetails }) => {
         );
 };
 
-export default CardDtal;
+export default CardDetails;

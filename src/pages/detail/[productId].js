@@ -1,4 +1,4 @@
-import CardDtal from "@/component/CardDetails";
+import CardDetails from "@/component/CardDetails";
 import RootLayout from "@/component/layouts/RootLayout";
 import { useRouter } from "next/router";
 const ProductDetail = ({ product }) => {
@@ -6,7 +6,7 @@ const ProductDetail = ({ product }) => {
      const productDetails = product.data
      return (
           <div>
-               <CardDtal productDetails={productDetails} />
+               <CardDetails productDetails={productDetails} />
           </div>
      );
 };
@@ -22,7 +22,7 @@ ProductDetail.getLayout = function getLayout(page) {
 }
 
 export async function getStaticPaths() {
-     const res = await fetch(`https://pc-bd.vercel.app/api/v1/product`)
+     const res = await fetch(`https://pc-bd.vercel.app/api/v1/product/?limit=100`)
      const products = await res.json()
 
      const paths = products.data.map((product) => ({
