@@ -6,7 +6,7 @@ import { FaGithub, FaGoogle } from "react-icons/fa";
 const LoginPage = () => {
   const dispatch = useAppDispatch();
   const { data: session } = useSession();
-  // console.log(session?.user?.email);
+  
   const handelGoogleLogin = () => {
     signIn("google", {
       callbackUrl: "http://localhost:3000/",

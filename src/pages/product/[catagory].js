@@ -1,17 +1,16 @@
 import ProductsCard from "@/component/Card";
 import RootLayout from "@/component/Layouts/RootLayout";
 import { useAppSelector } from "@/redux/hook";
-import { useReducer } from "react";
+import { useRouter } from "next/router";
 
 const ProductCategory = () => {
-  const { products } = useAppSelector((state) => state.ProductCategory);
-  const router = useReducer();
+  const { products } = useAppSelector((state) => state);
+  console.log(products);
+  const router = useRouter();
 
   const filteredProducts = products.filter(
     (product) => product.category === `${router.query.category}`
   );
-
-  console.log(filteredProducts);
 
   return (
     <div className="container mx-auto my-14">
