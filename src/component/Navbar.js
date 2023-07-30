@@ -21,7 +21,7 @@ const Navbar = () => {
 
   return (
     <>
-     <div className="bg-base-100">
+     <div className="bg-gray-500">
       <div className="navbar container mx-auto">
         <div className="navbar-start">
           <div className="dropdown">
@@ -43,14 +43,14 @@ const Navbar = () => {
               </li>
             </ul>
           </div>
-          <Link href='/' className="text-xl">PC Builder BD</Link>
+          <Link href='/' className="text-xl font-bold">PC Builder BD</Link>
         </div>
 
         <ul className="dropdown hidden lg:block">
-          <label className="cursor-pointer" tabIndex={0} >
+          <label className="cursor-pointer font-semibold" tabIndex={0} >
             Categories
           </label>
-          <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+          <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 font-semibold shadow bg-base-100 rounded-box w-52">
             <li><Link href='/prodact/CPU'>CPU Processor</Link></li>
             <li><Link href='/prodact/Motherboard'>Motherboard</Link></li>
             <li><Link href='/prodact/RAM'>RAM</Link></li>
@@ -61,10 +61,10 @@ const Navbar = () => {
         </ul>
 
         <div className="navbar-end">
-          <Link href='/pc-build' className="btn">PC Build</Link>
+          <Link href='/pc-build' className="btn btn-secondary mx-2">PC Build</Link>
           <ul className="">
             {user?.email ? <li><p className="btn btn-warning" onClick={handelLogOut}>Log Out</p></li> :
-              <li><Link className="btn btn-primary" href='/login'>Login</Link></li>}
+              <li><Link className="btn btn-accent" href='/login'>Login</Link></li>}
           </ul>
         </div>
       </div>
