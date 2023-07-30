@@ -1,15 +1,14 @@
-import React from "react";
-import Navbar from "../Navbar";
 import Footer from "../Footer";
+import NavBar from "../NavBar";
 
 const RootLayout = ({ children }) => {
-  return (
-    <>
-      <Navbar />
-      {children}
-      <Footer />
-    </>
-  );
+     return (
+          <div>
+               <NavBar/>
+               {children}
+               <Footer/>
+          </div>
+     );
 };
 
 export default RootLayout;

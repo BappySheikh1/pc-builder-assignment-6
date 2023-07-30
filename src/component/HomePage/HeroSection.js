@@ -1,7 +1,7 @@
 import Image from "next/image";
-import banner from "../../assets/homeimf.png";
+import banner from "../../assets/asus-zenbook-14-um425ua-amd-ryzen-5-5500u-14-inch-11664790375.webp"
 
-const HeroSectionHome = () => {
+const HeroSection = () => {
   return (
     <div className="hero ">
       <div className="hero-content flex-col lg:flex-row-reverse">
@@ -21,4 +21,4 @@ const HeroSectionHome = () => {
   );
 };
 
-export default HeroSectionHome;
+export default HeroSection;

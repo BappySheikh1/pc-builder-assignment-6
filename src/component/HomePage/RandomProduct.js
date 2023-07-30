@@ -1,11 +1,17 @@
-import React from 'react';
 
-const RandomProductPage = () => {
-    return (
-        <div>
-            <h1>This is Home Page RandomProduct</h1>
-        </div>
-    );
+const RandomProduct = () => {
+     // const {data} = product
+  
+     return (
+          <div>
+               <div>
+                    <h1>Featured Products</h1>
+                    <p>Check & Get Your Desired Product!</p>
+               </div>
+          </div>
+     );
 };
 
-export default RandomProductPage;
+export default RandomProduct;
+
+

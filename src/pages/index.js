@@ -1,58 +1,57 @@
-import ProductsCard from "@/component/Card";
-import HeroSectionHome from "@/component/HomePage/HeroSection";
-import ProductCategoryHomePage from "@/component/HomePage/ProductCategory";
-import { getProductsCatagoriSuccess } from "@/redux/features/productCategory/productCategorySlice";
+import Card from "@/component/Card";
+import CatagoryHome from "@/component/HomePage/Catagory";
+import HeroSection from "@/component/HomePage/HeroSection";
+// import CatagoryHome from "@/component/Homepahe/Catagory";
+// import HeroSection from "@/component/Homepahe/HeroSection";
+import RootLayout from "@/component/layouts/RootLayout";
+import { getProductsCatagoriSuccess } from "@/redux/features/productCatagory/productCatagorySlice";
 import { useAppDispatch } from "@/redux/hook";
 import { useEffect } from "react";
 
-const { default: RootLayout } = require("@/component/Layouts/RootLayout");
+const HomePage = ({ prodates }) => {
 
-const HomePage = ({ products }) => {
-  // console.log(products);
-  const randomSixProducts = products?.data.slice(0, 6);
+  const randomSix = prodates.data.slice(0, 6);
 
   const dispatch = useAppDispatch();
-
+  // dispatch(getProductsSuccess(product.data))
   useEffect(() => {
-    if (products) {
-      dispatch(getProductsCatagoriSuccess(products.data));
+    if (prodates) {
+      dispatch(getProductsCatagoriSuccess(prodates.data));
     }
-  }, [dispatch, products]);
+  }, [prodates, dispatch]);
+
 
   return (
-    <>
-      <HeroSectionHome />
-      <ProductCategoryHomePage />
-
+    <div>
+      <HeroSection />
+      <CatagoryHome />
       <div className="container mx-auto my-14">
         <div className="text-center">
-          <h1 className="text-4xl my-3 font-bold">Featured Products</h1>
-          {/* <p>Check & Get Your Desired Product!</p> */}
+        <h1 className="text-4xl my-3 mb-5 font-bold">Featured Products</h1>
         </div>
 
         <div className="grid  grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2">
-          {randomSixProducts.map((product) => (
-            <ProductsCard product={product} key={product._id} />
-          ))}
+          {
+            randomSix.map(product => <Card product={product} key={product._id} />)
+          }
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
 export default HomePage;
 
+
 HomePage.getLayout = function getLayout(page) {
-  return <RootLayout>{page}</RootLayout>;
-};
+  return (
+    <RootLayout>{page}</RootLayout>
+  )
+}
+
 
 export const getStaticProps = async () => {
-  const res = await fetch(`https://pc-bd.vercel.app/api/v1/product/?limit=100`);
-  const data = await res.json();
-  return {
-    props: {
-      products: data,
-    },
-    revalidate: 10,
-  };
-};
+  const res = await fetch('https://pc-bd.vercel.app/api/v1/product/?limit=100')
+  const data = await res.json()
+  return { props: { prodates: data }, revalidate: 10 }
+}
