@@ -1,4 +1,5 @@
 import ProductsCard from "@/component/Card";
+import ProductCategoryHomePage from "@/component/HomePage/ProductCategory";
 import { getProductsCatagoriSuccess } from "@/redux/features/productCategory/productCategorySlice";
 import { useAppDispatch } from "@/redux/hook";
 import { useEffect } from "react";
@@ -19,6 +20,9 @@ const HomePage = ({ products }) => {
 
   return (
     <>
+
+    <ProductCategoryHomePage />
+    
       <div className="container mx-auto my-14">
         <div className="text-center">
           <h1 className="text-4xl my-3">Featured Products</h1>
