@@ -9,12 +9,14 @@ const LoginPage = () => {
   
   const handelGoogleLogin = () => {
     signIn("google", {
-      callbackUrl: "http://localhost:3000/",
+      // callbackUrl: "http://localhost:3000/",
+      callbackUrl: "https://pc-builder-bd.vercel.app/",
     });
   };
   const handelGithubLogin = () => {
     signIn("github", {
-      callbackUrl: "http://localhost:3000/",
+      // callbackUrl: "http://localhost:3000/",
+      callbackUrl: "https://pc-builder-bd.vercel.app/",
     });
   };
 
