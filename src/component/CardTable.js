@@ -1,14 +1,15 @@
+/* eslint-disable @next/next/no-img-element */
 
 import { addToBuild } from "@/redux/features/addToBuild/addToBuildSlice";
 import { useAppDispatch } from "@/redux/hook";
 
-const CardTable = ({prodct , setShowModal}) => {
-     const { image, productName, category, status, price, individualRating , _id } =prodct 
+const CardTable = ({product , setShowModal}) => {
+     const { image, productName,  price } =product 
 
      const dispatch = useAppDispatch();
 
-     const handelAddToBuild = (prodct) => {
-          dispatch(addToBuild(prodct))
+     const handelAddToBuild = (product) => {
+          dispatch(addToBuild(product))
           setShowModal(false)
      }
 
@@ -31,7 +32,7 @@ const CardTable = ({prodct , setShowModal}) => {
                <p>{productName}</p>
                <p className="text-xl font-semibold">${price}</p>
             </td>
-            <td><button onClick={()=>handelAddToBuild(prodct)} className="btn btn-primary"> Add to Builder </button></td>
+            <td><button onClick={()=>handelAddToBuild(product)} className="btn btn-primary"> Add to Builder </button></td>
           </tr>
           {/* row 2 */}
         </tbody>

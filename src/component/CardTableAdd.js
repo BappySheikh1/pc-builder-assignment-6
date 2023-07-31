@@ -1,5 +1,6 @@
-const CardTableAdd = ({ prodct }) => {
-    const { image, productName, price } = prodct;
+/* eslint-disable @next/next/no-img-element */
+const CardTableAdd = ({ product }) => {
+    const { image, productName, price } = product;
     return (
       <>
         <div className="w-full flex gap-3">

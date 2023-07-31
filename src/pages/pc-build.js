@@ -12,14 +12,14 @@ import { Toaster, toast } from "react-hot-toast";
 
 const PcBuildPage = ({ product }) => {
   const [showModal, setShowModal] = useState(false);
-  const [filteredProducts, setfilteredProducts] = useState();
+  const [filteredProducts, setFilteredProducts] = useState();
 
   const { products } = useAppSelector((state) => state.products);
   const { addToBuild } = useAppSelector((state) => state.addToBuild);
 
-  const handelAddToBuilder = (catagory) => {
-    setfilteredProducts(
-      products.filter((product) => product.category === `${catagory}`)
+  const handelAddToBuilder = (category) => {
+    setFilteredProducts(
+      products.filter((product) => product.category === `${category}`)
     );
     setShowModal(true);
   };
@@ -29,7 +29,7 @@ const PcBuildPage = ({ product }) => {
   const notify = () => toast.success("Successfully Build! Request ");
 
   const dispatch = useAppDispatch();
-  // dispatch(getProductsSuccess(product.data))
+
   useEffect(() => {
     if (product) {
       dispatch(getProductsStart());
@@ -42,19 +42,19 @@ const PcBuildPage = ({ product }) => {
   }, [product, dispatch]);
 
   return (
-    <div className="md:flex md:justify-center ">
+    <div className="md:flex md:justify-center">
       <Toaster />
-      <div className="m-4  md:w-1/2 box-border border-4 p">
+      <div className="m-4  md:w-[70%] box-border  p-2">
         <div className="grid grid-cols-5">
           <div className="col-start-1 col-span-5 w-full h-auto bg-base-200">
-            <div className="md:flex md: justify-between">
-              <h3 className="text-1xl font-semibold">
+            <div className="md:flex md:justify-between">
+              <h3 className="text-1xl p-3 font-semibold my-3">
                 PC Builder - Build Your Own Computer - PC Builder BD
               </h3>
               <div>
                 <button
                   onClick={notify}
-                  className={`btn btn-accent ${
+                  className={`btn my-3 bg-transparent hover:bg-[#42d91c] hover:text-white ${
                     x.length === 6 ? "" : "btn-disabled"
                   }`}
                 >
@@ -62,14 +62,12 @@ const PcBuildPage = ({ product }) => {
                 </button>
               </div>
             </div>
-            <p className="p-1 mt-1 font-semibold bg-gray-900 text-gray-50">
-              Core Components
+            <p className=" mt-1 font-semibold bg-[#4c4f4b] p-3 text-white">
+              Your Build PC
             </p>
           </div>
         </div>
-        {/* {
-                         computerRecudCatagory.map((crc, i) => <PcbuildCatagory key={i} crc={crc} />)
-                    } */}
+        
         {/* damo CPU */}
         <>
           <div className="mt-10">
@@ -92,9 +90,9 @@ const PcBuildPage = ({ product }) => {
                         </div>
 
                         <div className="relative p-6 flex-auto">
-                          {filteredProducts.map((prodct, i) => (
+                          {filteredProducts.map((product, i) => (
                             <CardTable
-                              prodct={prodct}
+                              product={product}
                               key={i}
                               setShowModal={setShowModal}
                             />
@@ -126,11 +124,11 @@ const PcBuildPage = ({ product }) => {
               </div>
               <div className="col-start-3 col-end-5 w-full">
                 <div>
-                  {/* {addtoBuild.map((prodct, i) => (<CardTable prodct={prodct} key={i}/>))} */}
+               
                   {addToBuild
                     .filter((product) => product.category === `CPU`)
-                    .map((prodct, i) => (
-                      <CardTableAdd prodct={prodct} key={i} />
+                    .map((product, i) => (
+                      <CardTableAdd product={product} key={i} />
                     ))}
                 </div>
               </div>
@@ -175,9 +173,9 @@ const PcBuildPage = ({ product }) => {
                         </div>
 
                         <div className="relative p-6 flex-auto">
-                          {filteredProducts.map((prodct, i) => (
+                          {filteredProducts.map((product, i) => (
                             <CardTable
-                              prodct={prodct}
+                              product={product}
                               key={i}
                               setShowModal={setShowModal}
                             />
@@ -209,11 +207,11 @@ const PcBuildPage = ({ product }) => {
               </div>
               <div className="col-start-3 col-end-5 w-full">
                 <div>
-                  {/* {addtoBuild.map((prodct, i) => (<CardTable prodct={prodct} key={i}/>))} */}
+                  
                   {addToBuild
                     .filter((product) => product.category === `Motherboard`)
-                    .map((prodct, i) => (
-                      <CardTableAdd prodct={prodct} key={i} />
+                    .map((product, i) => (
+                      <CardTableAdd product={product} key={i} />
                     ))}
                 </div>
               </div>
@@ -256,9 +254,9 @@ const PcBuildPage = ({ product }) => {
                         </div>
 
                         <div className="relative p-6 flex-auto">
-                          {filteredProducts.map((prodct, i) => (
+                          {filteredProducts.map((product, i) => (
                             <CardTable
-                              prodct={prodct}
+                              product={product}
                               key={i}
                               setShowModal={setShowModal}
                             />
@@ -290,11 +288,11 @@ const PcBuildPage = ({ product }) => {
               </div>
               <div className="col-start-3 col-end-5 w-full">
                 <div>
-                  {/* {addtoBuild.map((prodct, i) => (<CardTable prodct={prodct} key={i}/>))} */}
+               
                   {addToBuild
                     .filter((product) => product.category === `RAM`)
-                    .map((prodct, i) => (
-                      <CardTableAdd prodct={prodct} key={i} />
+                    .map((product, i) => (
+                      <CardTableAdd product={product} key={i} />
                     ))}
                 </div>
               </div>
@@ -337,9 +335,9 @@ const PcBuildPage = ({ product }) => {
                         </div>
 
                         <div className="relative p-6 flex-auto">
-                          {filteredProducts.map((prodct, i) => (
+                          {filteredProducts.map((product, i) => (
                             <CardTable
-                              prodct={prodct}
+                              product={product}
                               key={i}
                               setShowModal={setShowModal}
                             />
@@ -371,11 +369,11 @@ const PcBuildPage = ({ product }) => {
               </div>
               <div className="col-start-3 col-end-5 w-full">
                 <div>
-                  {/* {addtoBuild.map((prodct, i) => (<CardTable prodct={prodct} key={i}/>))} */}
+                  
                   {addToBuild
                     .filter((product) => product.category === `PowerSupplyUnit`)
-                    .map((prodct, i) => (
-                      <CardTableAdd prodct={prodct} key={i} />
+                    .map((product, i) => (
+                      <CardTableAdd product={product} key={i} />
                     ))}
                 </div>
               </div>
@@ -420,9 +418,9 @@ const PcBuildPage = ({ product }) => {
                         </div>
 
                         <div className="relative p-6 flex-auto">
-                          {filteredProducts.map((prodct, i) => (
+                          {filteredProducts.map((product, i) => (
                             <CardTable
-                              prodct={prodct}
+                              product={product}
                               key={i}
                               setShowModal={setShowModal}
                             />
@@ -454,11 +452,11 @@ const PcBuildPage = ({ product }) => {
               </div>
               <div className="col-start-3 col-end-5 w-full">
                 <div>
-                  {/* {addtoBuild.map((prodct, i) => (<CardTable prodct={prodct} key={i}/>))} */}
+                
                   {addToBuild
                     .filter((product) => product.category === `StorageDevice`)
-                    .map((prodct, i) => (
-                      <CardTableAdd prodct={prodct} key={i} />
+                    .map((product, i) => (
+                      <CardTableAdd product={product} key={i} />
                     ))}
                 </div>
               </div>
@@ -501,9 +499,9 @@ const PcBuildPage = ({ product }) => {
                         </div>
 
                         <div className="relative p-6 flex-auto">
-                          {filteredProducts.map((prodct, i) => (
+                          {filteredProducts.map((product, i) => (
                             <CardTable
-                              prodct={prodct}
+                              product={product}
                               key={i}
                               setShowModal={setShowModal}
                             />
@@ -535,11 +533,11 @@ const PcBuildPage = ({ product }) => {
               </div>
               <div className="col-start-3 col-end-5 w-full">
                 <div>
-                  {/* {addtoBuild.map((prodct, i) => (<CardTable prodct={prodct} key={i}/>))} */}
+                
                   {addToBuild
                     .filter((product) => product.category === `Monitor`)
-                    .map((prodct, i) => (
-                      <CardTableAdd prodct={prodct} key={i} />
+                    .map((product, i) => (
+                      <CardTableAdd product={product} key={i} />
                     ))}
                 </div>
               </div>

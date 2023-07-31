@@ -4,14 +4,14 @@ import CardTable from "./CardTable";
 
 const PcbuildCatagory = ({ crc }) => {
   const [showModal, setShowModal] = useState(false);
-  const [filteredProducts, setfilteredProducts] = useState();
+  const [filteredProducts, setFilteredProducts] = useState();
 
   const { products } = useAppSelector((state) => state.products);
-  const { addtoBuild } = useAppSelector((state) => state.addtoBuild);
+  // const { addToBuild } = useAppSelector((state) => state.addToBuild);
 
-  const handelAddToBuilder = (catagory) => {
-    setfilteredProducts(
-      products.filter((product) => product.category === `${catagory}`)
+  const handelAddToBuilder = (category) => {
+    setFilteredProducts(
+      products.filter((product) => product.category === `${category}`)
     );
     setShowModal(true);
 
@@ -38,8 +38,8 @@ const PcbuildCatagory = ({ crc }) => {
                   </div>
 
                   <div className="relative p-6 flex-auto">
-                    {filteredProducts.map((prodct, i) => (
-                      <CardTable prodct={prodct} key={i} setShowModal={setShowModal}/>
+                    {filteredProducts.map((product, i) => (
+                      <CardTable product={product} key={i} setShowModal={setShowModal}/>
                     ))}
                   </div>
 
@@ -67,10 +67,6 @@ const PcbuildCatagory = ({ crc }) => {
           </div>
         </div>
         <div className="col-start-3 col-end-5 w-full">
-          {/* <div>
-          {addtoBuild.map((prodct, i) => (<CardTable prodct={prodct} key={i}/>))}
-
-          </div> */}
         </div>
         <div className="col-start-5 col-end-6 w-full">
           <div>
