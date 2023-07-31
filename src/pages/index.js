@@ -8,17 +8,17 @@ import { getProductsCatagoriSuccess } from "@/redux/features/productCatagory/pro
 import { useAppDispatch } from "@/redux/hook";
 import { useEffect } from "react";
 
-const HomePage = ({ prodates }) => {
+const HomePage = ({ products: products }) => {
 
-  const randomSix = prodates.data.slice(0, 6);
+  const randomSix = products.data.slice(0, 6);
 
   const dispatch = useAppDispatch();
   // dispatch(getProductsSuccess(product.data))
   useEffect(() => {
-    if (prodates) {
-      dispatch(getProductsCatagoriSuccess(prodates.data));
+    if (products) {
+      dispatch(getProductsCatagoriSuccess(products.data));
     }
-  }, [prodates, dispatch]);
+  }, [products, dispatch]);
 
 
   return (
@@ -51,7 +51,7 @@ HomePage.getLayout = function getLayout(page) {
 
 
 export const getStaticProps = async () => {
-  const res = await fetch('https://pc-bd.vercel.app/api/v1/product/?limit=100')
+  const res = await fetch('https://pc-builder-bd.vercel.app/api/v1/product/?limit=100')
   const data = await res.json()
-  return { props: { prodates: data }, revalidate: 10 }
+  return { props: { products: data }, revalidate: 10 }
 }
