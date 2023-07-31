@@ -54,7 +54,7 @@ const PcBuildPage = ({ product }) => {
               <div>
                 <button
                   onClick={notify}
-                  className={`btn my-3 bg-transparent hover:bg-[#42d91c] hover:text-white ${
+                  className={`btn btn-outline border-dashed border-[#42d91c] hover:border-[#42d91c] my-3 mx-1 bg-transparent hover:bg-[#42d91c] hover:text-white ${
                     x.length === 6 ? "" : "btn-disabled"
                   }`}
                 >
@@ -136,7 +136,7 @@ const PcBuildPage = ({ product }) => {
                 <div>
                   <button
                     onClick={() => handelAddToBuilder("CPU")}
-                    className={`btn btn-primary ${
+                    className={`btn btn-xs btn-outline border-dashed hover:bg-[#42d91c] border-[#42d91c]  hover:border-[#42d91c] ${
                       addToBuild.find((product) => product.category === `CPU`)
                         ? "btn-disabled"
                         : ""
@@ -219,7 +219,7 @@ const PcBuildPage = ({ product }) => {
                 <div>
                   <button
                     onClick={() => handelAddToBuilder("Motherboard")}
-                    className={`btn btn-primary ${
+                    className={`btn btn-xs btn-outline border-dashed hover:bg-[#42d91c] border-[#42d91c]  hover:border-[#42d91c] ${
                       addToBuild.find(
                         (product) => product.category === `Motherboard`
                       )
@@ -300,7 +300,7 @@ const PcBuildPage = ({ product }) => {
                 <div>
                   <button
                     onClick={() => handelAddToBuilder("RAM")}
-                    className={`btn btn-primary ${
+                    className={`btn btn-xs btn-outline border-dashed hover:bg-[#42d91c] border-[#42d91c]  hover:border-[#42d91c] ${
                       addToBuild.find((product) => product.category === `RAM`)
                         ? "btn-disabled"
                         : ""
@@ -381,7 +381,7 @@ const PcBuildPage = ({ product }) => {
                 <div>
                   <button
                     onClick={() => handelAddToBuilder("PowerSupplyUnit")}
-                    className={`btn btn-primary ${
+                    className={`btn btn-xs btn-outline border-dashed hover:bg-[#42d91c] border-[#42d91c]  hover:border-[#42d91c] ${
                          addToBuild.find(
                         (product) => product.category === `PowerSupplyUnit`
                       )
@@ -464,7 +464,7 @@ const PcBuildPage = ({ product }) => {
                 <div>
                   <button
                     onClick={() => handelAddToBuilder("StorageDevice")}
-                    className={`btn btn-primary ${
+                    className={`btn btn-xs btn-outline border-dashed hover:bg-[#42d91c] border-[#42d91c]  hover:border-[#42d91c] ${
                          addToBuild.find(
                         (product) => product.category === `StorageDevice`
                       )
@@ -545,7 +545,7 @@ const PcBuildPage = ({ product }) => {
                 <div>
                   <button
                     onClick={() => handelAddToBuilder("Monitor")}
-                    className={`btn btn-primary ${
+                    className={`btn btn-xs btn-outline border-dashed hover:bg-[#42d91c] border-[#42d91c]  hover:border-[#42d91c] ${
                          addToBuild.find(
                         (product) => product.category === `Monitor`
                       )
